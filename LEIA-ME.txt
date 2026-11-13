@@ -1,0 +1,38 @@
+SITE SURPRESA ❤️
+
+1. Extraia o arquivo ZIP.
+2. Abra a pasta site_namorada.
+3. Dê dois cliques em index.html para abrir o site no navegador.
+
+FOTOS:
+A imagem de abertura foi atualizada com o novo emblema enviado.
+A foto de vocês dois está um pouco maior.
+
+MÚSICA:
+O áudio enviado foi colocado no topo do site.
+Basta apertar play no reprodutor. Alguns navegadores não permitem iniciar
+a música automaticamente; por isso, ela começa quando a pessoa aperta play.
+
+CONTADOR:
+Configurado para começar em 08/12/2025 e atualiza automaticamente.
+
+VIDEOS:
+Foi adicionada uma área de vídeos com dois espaços.
+Coloque seus vídeos MP4 dentro da pasta assets com estes nomes:
+- video1.mp4
+- video2.mp4
+
+Se não tiver um segundo vídeo, pode deixar esse espaço vazio.
+Os vídeos aparecem com controles para reproduzir, pausar e ajustar o volume.
+
+GALERIA ATUALIZADA:
+Agora há espaço para 4 vídeos e 2 fotos.
+Vídeos MP4 na pasta assets:
+- video1.mp4
+- video2.mp4
+- video3.mp4
+- video4.mp4
+
+Fotos na pasta assets:
+- nos-dois.jpeg (já incluída)
+- foto2.jpeg (adicione sua segunda foto com esse nome)

@@ -1,0 +1,219 @@
+<html lang="auto" class=""><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090909">
+  <title>Minha pessoa favorita ❤️</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+    :root { --red:#c91424; --gold:#d9ad58; --cream:#f5e9d5; }
+    * { box-sizing:border-box }
+    html { scroll-behavior:smooth }
+    body { margin:0; color:var(--cream); background:#080808; font-family:Montserrat, sans-serif; }
+    body:before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.12; z-index:-1;
+      background:radial-gradient(ellipse at 50% 15%, #641018 0, transparent 48%), radial-gradient(ellipse at 80% 80%, #3a260d 0, transparent 38%); }
+    .hero { min-height:100svh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:35px 20px 55px; position:relative; overflow:hidden; }
+    .hero:after { content:""; position:absolute; width:500px; height:500px; border:1px solid #a8793c33; border-radius:50%; box-shadow:0 0 0 35px #a8793c0c,0 0 0 75px #a8793c08; pointer-events:none; }
+    .band-logo { width:min(230px,55vw); height:auto; object-fit:contain; margin-bottom:18px; filter:drop-shadow(0 0 25px #c9142460); z-index:1; }
+
+    .top-music { z-index:2; width:min(390px,90vw); margin:0 auto 24px; padding:12px 16px 10px; border:1px solid #8d292f; background:#100b0bef; box-shadow:0 8px 30px #0009; }
+    .music-note { color:#e2b75e; font-size:1.1rem; margin-right:7px; }
+    .music-label { color:#e7d8c6; font-size:.66rem; letter-spacing:.08em; text-transform:uppercase; }
+    .top-music audio { display:block; width:100%; height:34px; margin-top:8px; }
+
+    .memory-heading { color:#e2b75e; text-align:center; font:500 1.8rem "Cormorant Garamond",serif; margin:34px 0 22px; }
+    .photo-heading { margin-top:58px; }
+    .videos-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px; width:min(1000px,100%); margin:0 auto; }
+    .video-card, .memory-photo { min-width:0; padding:10px; border:1px solid #8d292f; background:#100b0b; box-shadow:0 15px 40px #0008; margin:0; }
+    .video-card video { display:block; width:100%; aspect-ratio:16/9; background:#000; object-fit:contain; }
+    .video-card p, .memory-photo figcaption { color:#e3c99d; text-align:center; font:italic 1.25rem "Cormorant Garamond",serif; margin:12px 0 3px; }
+    .photos-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px; width:min(820px,100%); margin:0 auto; }
+    .memory-photo img { display:block; width:100%; height:auto; max-height:520px; object-fit:contain; background:#000; }
+    .video-help { max-width:720px; margin:25px auto 0; text-align:center; color:#a99a8a; font-size:.72rem; line-height:1.8; }
+    @media(max-width:650px) { .videos-grid, .photos-grid { grid-template-columns:1fr; } }
+
+    .love-phrases { padding-top:58px; padding-bottom:58px; background:linear-gradient(180deg,transparent,#17090b 45%,transparent); }
+    .phrase-kicker { color:#d9ad58; text-align:center; text-transform:uppercase; letter-spacing:.28em; font-size:.65rem; margin:0 0 10px; }
+    .phrase-list { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; width:min(900px,100%); margin:32px auto 0; }
+    .phrase-card { min-height:145px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; padding:22px 16px; text-align:center; border:1px solid #8d292f; background:linear-gradient(145deg,#170d0e,#0b0909); box-shadow:0 12px 35px #0007; }
+    .phrase-card span { color:#d73543; font-size:1.25rem; }
+    .phrase-card p { margin:0; color:#f0dfc9; font:italic 1.65rem/1.2 "Cormorant Garamond",serif; }
+    @media(max-width:700px) { .phrase-list { grid-template-columns:1fr; max-width:460px; } .phrase-card { min-height:105px; } }
+
+    .eyebrow { color:var(--gold); letter-spacing:.32em; text-transform:uppercase; font-size:.68rem; z-index:1; }
+    h1 { font-family:"Cormorant Garamond",serif; font-size:clamp(3rem,9vw,6.4rem); font-weight:500; line-height:.95; margin:18px 0 14px; z-index:1; }
+    h1 span { color:#e03b45; font-style:italic; }
+    .intro { max-width:550px; color:#d4c8b9; line-height:1.8; font-size:.95rem; z-index:1; }
+    .scroll { margin-top:35px; color:var(--gold); font-size:.7rem; letter-spacing:.22em; text-transform:uppercase; z-index:1; }
+    .scroll b { display:block; font-size:1.5rem; margin-top:8px; animation:bob 1.6s infinite; }
+    @keyframes bob { 50% { transform:translateY(7px) } }
+    section { padding:85px 20px; }
+    .wrap { width:min(980px,100%); margin:auto; }
+    .section-title { font:500 clamp(2.4rem,6vw,4rem) "Cormorant Garamond",serif; text-align:center; margin:0 0 12px; }
+    .section-sub { text-align:center; color:#b9aa9a; font-size:.82rem; line-height:1.8; margin:0 auto 38px; max-width:600px; }
+    .photo-frame { width:min(820px,100%); margin:auto; padding:10px; border:1px solid #b98b4a; background:linear-gradient(135deg,#241b12,#090909); box-shadow:0 20px 70px #000; }
+    .photo-frame img { display:block; width:100%; height:auto; }
+    .caption { text-align:center; color:var(--gold); font:italic 1.5rem "Cormorant Garamond",serif; margin-top:20px; }
+    .counter-section { background:linear-gradient(180deg,transparent,#19090b 48%,transparent); }
+    .counter { display:flex; justify-content:center; flex-wrap:wrap; gap:12px; margin:35px auto 12px; }
+    .unit { min-width:105px; padding:20px 13px; text-align:center; border:1px solid #9b2530; background:#100b0b; }
+    .num { display:block; color:#f0c778; font:600 clamp(2rem,6vw,3.5rem) "Cormorant Garamond",serif; }
+    .unit small { color:#c6b6a6; letter-spacing:.16em; text-transform:uppercase; font-size:.58rem; }
+    .since { text-align:center; color:#b9aa9a; font-size:.78rem; margin-top:20px; }
+    .note { max-width:680px; margin:auto; text-align:center; padding:35px 28px; border-top:1px solid #8e2930; border-bottom:1px solid #8e2930; }
+    .note p { font:italic 1.55rem/1.65 "Cormorant Garamond",serif; color:#eadcc8; }
+    .music { text-align:center; max-width:580px; margin:auto; padding:28px; border:1px solid #6e522e; background:#100d0a; }
+    .music .disc { font-size:2.4rem; display:block; margin-bottom:12px; }
+    .music p { color:#c7b9a8; font-size:.8rem; line-height:1.7; }
+    button { cursor:pointer; border:1px solid var(--gold); background:transparent; color:var(--cream); padding:13px 22px; letter-spacing:.12em; text-transform:uppercase; font-size:.68rem; transition:.2s; }
+    button:hover { background:var(--red); border-color:var(--red); }
+    audio { width:100%; margin-top:18px; }
+    .hidden { display:none; }
+    footer { padding:35px 20px 50px; text-align:center; color:#8d7d6c; font-size:.7rem; letter-spacing:.08em; }
+    .heart { color:#d52b39; }
+    @media(max-width:520px) { section{padding:65px 17px}.unit{min-width:calc(50% - 8px);flex:1}.band-logo{width:190px} }
+  </style>
+<style type="text/css">/* Copyright 2021 Google Inc. All Rights Reserved. */<br>.goog-te-banner-frame{left:0px;top:0px;height:39px;width:100%;z-index:10000001;position:fixed;border:none;border-bottom:1px solid #6b90da;margin:0;-moz-box-shadow:0 0 8px 1px #999999;-webkit-box-shadow:0 0 8px 1px #999999;box-shadow:0 0 8px 1px #999999;_position:absolute}.goog-te-menu-frame{z-index:10000002;position:fixed;border:none;-moz-box-shadow:0 3px 8px 2px #999999;-webkit-box-shadow:0 3px 8px 2px #999999;box-shadow:0 3px 8px 2px #999999;_position:absolute}.goog-te-ftab-frame{z-index:10000000;border:none;margin:0}.goog-te-gadget{font-family:arial;font-size:11px;color:#666;white-space:nowrap}.goog-te-gadget img{vertical-align:middle;border:none}.goog-te-gadget-simple{background-color:#fff;border-left:1px solid #d5d5d5;border-top:1px solid #9b9b9b;border-bottom:1px solid #e8e8e8;border-right:1px solid #d5d5d5;font-size:10pt;display:inline-block;padding-top:1px;padding-bottom:2px;cursor:pointer;zoom:1;*display:inline}.goog-te-gadget-icon{margin-left:2px;margin-right:2px;width:19px;height:19px;border:none;vertical-align:middle}.goog-te-combo{margin-left:4px;margin-right:4px;vertical-align:baseline;*vertical-align:middle}.goog-te-gadget .goog-te-combo{margin:4px 0}.goog-logo-link,.goog-logo-link:link,.goog-logo-link:visited,.goog-logo-link:hover,.goog-logo-link:active{font-size:12px;font-weight:bold;color:#444;text-decoration:none}.goog-te-banner .goog-logo-link,.goog-close-link{display:block;margin:0px 10px}.goog-te-banner .goog-logo-link{padding-top:2px;padding-left:4px}.goog-te-combo,.goog-te-banner *,.goog-te-ftab *,.goog-te-menu *,.goog-te-menu2 *,.goog-te-balloon *{font-family:arial;font-size:10pt}.goog-te-banner{margin:0;background-color:#e4effb;overflow:hidden}.goog-te-banner img{border:none}.goog-te-banner-content{color:#000}.goog-te-banner-content img{vertical-align:middle}.goog-te-banner-info{color:#666;vertical-align:top;margin-top:0px;font-size:7pt}.goog-te-banner-margin{width:8px}.goog-te-button{border-color:#e7e7e7;border-style:none solid solid none;border-width:0 1px 1px 0}.goog-te-button div{border-color:#cccccc #999999 #999999 #cccccc;border-right:1px solid #999999;border-style:solid;border-width:1px;height:20px}.goog-te-button button{background:transparent;border:none;cursor:pointer;height:20px;overflow:hidden;margin:0;vertical-align:top;white-space:nowrap}.goog-te-button button:active{background:none repeat scroll 0 0 #cccccc}.goog-te-ftab{margin:0px;background-color:#fff;white-space:nowrap}.goog-te-ftab-link{text-decoration:none;font-weight:bold;font-size:10pt;border:1px outset #888;padding:6px 10px;white-space:nowrap;position:absolute;left:0px;top:0px}.goog-te-ftab-link img{margin-left:2px;margin-right:2px;width:19px;height:19px;border:none;vertical-align:middle}.goog-te-ftab-link span{text-decoration:underline;margin-left:2px;margin-right:2px;vertical-align:middle}.goog-float-top .goog-te-ftab-link{padding:2px 2px;border-top-width:0px}.goog-float-bottom .goog-te-ftab-link{padding:2px 2px;border-bottom-width:0px}.goog-te-menu-value{text-decoration:none;color:#0000cc;white-space:nowrap;margin-left:4px;margin-right:4px}.goog-te-menu-value span{text-decoration:underline}.goog-te-menu-value img{margin-left:2px;margin-right:2px}.goog-te-gadget-simple .goog-te-menu-value{color:#000}.goog-te-gadget-simple .goog-te-menu-value span{text-decoration:none}.goog-te-menu{background-color:#ffffff;text-decoration:none;border:2px solid #c3d9ff;overflow-y:scroll;overflow-x:hidden;position:absolute;left:0;top:0}.goog-te-menu-item{padding:3px;text-decoration:none}.goog-te-menu-item,.goog-te-menu-item:link{color:#0000cc;background:#ffffff}.goog-te-menu-item:visited{color:#551a8b}.goog-te-menu-item:hover{background:#c3d9ff}.goog-te-menu-item:active{color:#0000cc}.goog-te-menu2{background-color:#ffffff;text-decoration:none;border:1px solid #6b90da;overflow:hidden;padding:4px}.goog-te-menu2-colpad{width:16px}.goog-te-menu2-separator{margin:6px 0;height:1px;background-color:#aaa;overflow:hidden}.goog-te-menu2-item div,.goog-te-menu2-item-selected div{padding:4px}.goog-te-menu2-item .indicator{display:none}.goog-te-menu2-item-selected .indicator{display:auto}.goog-te-menu2-item-selected .text{padding-left:4px;padding-right:4px}.goog-te-menu2-item,.goog-te-menu2-item-selected{text-decoration:none}.goog-te-menu2-item div,.goog-te-menu2-item:link div,.goog-te-menu2-item:visited div,.goog-te-menu2-item:active div{color:#0000cc;background:#ffffff}.goog-te-menu2-item:hover div{color:#ffffff;background:#3366cc}.goog-te-menu2-item-selected div,.goog-te-menu2-item-selected:link div,.goog-te-menu2-item-selected:visited div,.goog-te-menu2-item-selected:hover div,.goog-te-menu2-item-selected:active div{color:#000;font-weight:bold}.goog-te-balloon{background-color:#ffffff;overflow:hidden;padding:8px;border:none;-moz-border-radius:10px;border-radius:10px}.goog-te-balloon-frame{background-color:#ffffff;border:1px solid #6b90da;-moz-box-shadow:0 3px 8px 2px #999999;-webkit-box-shadow:0 3px 8px 2px #999999;box-shadow:0 3px 8px 2px #999999;-moz-border-radius:8px;border-radius:8px}.goog-te-balloon img{border:none}.goog-te-balloon-text{margin-top:6px}.goog-te-balloon-zippy{margin-top:6px;white-space:nowrap}.goog-te-balloon-zippy *{vertical-align:middle}.goog-te-balloon-zippy .minus{background-image:url(//www.google.com/images/zippy_minus_sm.gif)}.goog-te-balloon-zippy .plus{background-image:url(//www.google.com/images/zippy_plus_sm.gif)}.goog-te-balloon-zippy span{color:#00c;text-decoration:underline;cursor:pointer;margin:0 4px}.goog-te-balloon-form{margin:6px 0 0 0}.goog-te-balloon-form form{margin:0}.goog-te-balloon-form form textarea{margin-bottom:4px;width:100%}.goog-te-balloon-footer{margin:6px 0 4px 0}.goog-te-spinner-pos{z-index:1000;position:fixed;transition-delay:0.6s;left:-1000px;top:-1000px}.goog-te-spinner-animation{background:#ccc;display:flex;align-items:center;justify-content:center;width:104px;height:104px;border-radius:50px;background:#fff url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4=) 50% 50% no-repeat;transition:all 0.6s ease-in-out;transform:scale(0.4);opacity:0}.goog-te-spinner-animation-show{transform:scale(0.5);opacity:1}.goog-te-spinner{margin:2px 0 0 2px;animation:goog-te-spinner-rotator 1.4s linear infinite}@keyframes goog-te-spinner-rotator{0%{transform:rotate(0deg)}100%{transform:rotate(270deg)}}.goog-te-spinner-path{stroke-dasharray:187;stroke-dashoffset:0;stroke:#4285f4;transform-origin:center;animation:goog-te-spinner-dash 1.4s ease-in-out infinite}@keyframes goog-te-spinner-dash{0%{stroke-dashoffset:187}50%{stroke-dashoffset:46.75;transform:rotate(135deg)}100%{stroke-dashoffset:187;transform:rotate(450deg)}}#goog-gt-tt html,#goog-gt-tt body,#goog-gt-tt div,#goog-gt-tt span,#goog-gt-tt iframe,#goog-gt-tt h1,#goog-gt-tt h2,#goog-gt-tt h3,#goog-gt-tt h4,#goog-gt-tt h5,#goog-gt-tt h6,#goog-gt-tt p,#goog-gt-tt a,#goog-gt-tt img,#goog-gt-tt ol,#goog-gt-tt ul,#goog-gt-tt li,#goog-gt-tt table,#goog-gt-tt form,#goog-gt-tt tbody,#goog-gt-tt tr,#goog-gt-tt td{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;text-align:left;line-height:normal}#goog-gt-tt ol,#goog-gt-tt ul{list-style:none}#goog-gt-tt table{border-collapse:collapse;border-spacing:0}#goog-gt-tt caption,#goog-gt-tt th,#goog-gt-tt td{text-align:left;font-weight:normal}#goog-gt-tt input::-moz-focus-inner{border:0}div#goog-gt-tt{padding:10px 14px}#goog-gt-tt{color:#222;background-color:#ffffff;border:1px solid #eee;box-shadow:0 4px 16px rgba(0,0,0,.2);-moz-box-shadow:0 4px 16px rgba(0,0,0,.2);-webkit-box-shadow:0 4px 16px rgba(0,0,0,.2);display:none;font-family:arial;font-size:10pt;width:420px;padding:12px;position:absolute;z-index:10000}#goog-gt-tt .original-text,.gt-hl-layer{clear:both;font-size:10pt;position:relative;text-align:justify;width:100%}#goog-gt-tt .title{color:#999;font-family:arial,sans-serif;margin:4px 0;text-align:left}#goog-gt-tt .close-button{display:none}#goog-gt-tt .logo{float:left;margin:0px}#goog-gt-tt .activity-links{display:inline-block}#goog-gt-tt .started-activity-container{display:none;width:100%}#goog-gt-tt .activity-root{margin-top:20px}#goog-gt-tt .left{float:left}#goog-gt-tt .right{float:right}#goog-gt-tt .bottom{min-height:15px;position:relative;height:1%}#goog-gt-tt .status-message{background:-moz-linear-gradient(top,#29910d 0%,#20af0e 100%);background:-webkit-linear-gradient(top,#29910d 0%,#20af0e 100%);background:-o-linear-gradient(top,#29910d 0%,#20af0e 100%);background:-ms-linear-gradient(top,#29910d 0%,#20af0e 100%);background:linear-gradient(top,#29910d 0%,#20af0e 100%);background:#29910d;border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px;box-shadow:inset 0px 2px 2px #1e6609;-moz-box-shadow:inset 0px 2px 2px #1e6609;-webkit-box-shadow:inset 0px 2px 2px #1e6609;color:white;font-size:9pt;font-weight:bolder;margin-top:12px;padding:6px;text-shadow:1px 1px 1px #1e6609}#goog-gt-tt .activity-link{color:#1155cc;cursor:pointer;font-family:arial;font-size:11px;margin-right:15px;text-decoration:none}#goog-gt-tt textarea{font-family:arial;resize:vertical;width:100%;margin-bottom:10px;-webkit-border-radius:1px;-moz-border-radius:1px;border-radius:1px;border:1px solid #d9d9d9;border-top:1px solid silver;font-size:13px;height:auto;overflow-y:auto;padding:1px}#goog-gt-tt textarea:focus{-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,0.3);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,0.3);box-shadow:inset 0 1px 2px rgba(0,0,0,0.3);border:1px solid #4d90fe;outline:none}#goog-gt-tt .activity-cancel{margin-right:10px}#goog-gt-tt .translate-form{min-height:25px;vertical-align:middle;padding-top:8px}#goog-gt-tt .translate-form .activity-form{margin-bottom:5px;margin-bottom:0px}#goog-gt-tt .translate-form .activity-form input{display:inline-block;min-width:54px;*min-width:70px;border:1px solid #dcdcdc;border:1px solid rgba(0,0,0,0.1);text-align:center;color:#444;font-size:11px;font-weight:bold;height:27px;outline:0;padding:0 8px;vertical-align:middle;line-height:27px;margin:0 16px 0 0;box-shadow:0 1px 2px rgba(0,0,0,.1);-moz-box-shadow:0 1px 2px rgba(0,0,0,.1);-webkit-box-shadow:0 1px 2px rgba(0,0,0,.1);-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;-webkit-transition:all 0.218s;-moz-transition:all 0.218s;-o-transition:all 0.218s;transition:all 0.218s;background-color:#f5f5f5;background-image:-webkit-gradient(linear,left top,left bottom,from(#f5f5f5),to(#f1f1f1));background-image:-webkit-linear-gradient(top,#f5f5f5,#f1f1f1);background-image:-moz-linear-gradient(top,#f5f5f5,#f1f1f1);background-image:-ms-linear-gradient(top,#f5f5f5,#f1f1f1);background-image:-o-linear-gradient(top,#f5f5f5,#f1f1f1);background-image:linear-gradient(top,#f5f5f5,#f1f1f1);-webkit-user-select:none;-moz-user-select:none;cursor:default}#goog-gt-tt .translate-form .activity-form input:hover{border:1px solid #c6c6c6;color:#222;-webkit-transition:all 0.0s;-moz-transition:all 0.0s;-o-transition:all 0.0s;transition:all 0.0s;background-color:#f8f8f8;background-image:-webkit-gradient(linear,left top,left bottom,from(#f8f8f8),to(#f1f1f1));background-image:-webkit-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-moz-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-ms-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-o-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:linear-gradient(top,#f8f8f8,#f1f1f1)}#goog-gt-tt .translate-form .activity-form input:active{border:1px solid #c6c6c6;color:#333;background-color:#f6f6f6;background-image:-webkit-gradient(linear,left top,left bottom,from(#f6f6f6),to(#f1f1f1));background-image:-webkit-linear-gradient(top,#f6f6f6,#f1f1f1);background-image:-moz-linear-gradient(top,#f6f6f6,#f1f1f1);background-image:-ms-linear-gradient(top,#f6f6f6,#f1f1f1);background-image:-o-linear-gradient(top,#f6f6f6,#f1f1f1);background-image:linear-gradient(top,#f6f6f6,#f1f1f1)}#goog-gt-tt .translate-form .activity-form input:focus #goog-gt-tt .translate-form .activity-form input.focus #goog-gt-tt .translate-form .activity-form input:active,#goog-gt-tt .translate-form .activity-form input:focus:active,#goog-gt-tt .translate-form .activity-form input:.focus:active{box-shadow:inset 0 0 0 1px rgba(255,255,255,0.5);-webkit-box-shadow:inset 0 0 0 1px rgba(255,255,255,0.5);-moz-box-shadow:inset 0 0 0 1px rgba(255,255,255,0.5)}#goog-gt-tt .translate-form .activity-form input:focus,#goog-gt-tt .translate-form .activity-form input.focus{outline:none;border:1px solid #4d90fe;z-index:4!important}#goog-gt-tt .translate-form .activity-form input.selected{background-color:#eeeeee;background-image:-webkit-gradient(linear,left top,left bottom,from(#eeeeee),to(#e0e0e0));background-image:-webkit-linear-gradient(top,#eeeeee,#e0e0e0);background-image:-moz-linear-gradient(top,#eeeeee,#e0e0e0);background-image:-ms-linear-gradient(top,#eeeeee,#e0e0e0);background-image:-o-linear-gradient(top,#eeeeee,#e0e0e0);background-image:linear-gradient(top,#eeeeee,#e0e0e0);-webkit-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);-moz-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);border:1px solid #ccc;color:#333}#goog-gt-tt .translate-form .activity-form input.activity-submit{color:white;border-color:#3079ed;background-color:#4d90fe;background-image:-webkit-gradient(linear,left top,left bottom,from(#4d90fe),to(#4787ed));background-image:-webkit-linear-gradient(top,#4d90fe,#4787ed);background-image:-moz-linear-gradient(top,#4d90fe,#4787ed);background-image:-ms-linear-gradient(top,#4d90fe,#4787ed);background-image:-o-linear-gradient(top,#4d90fe,#4787ed);background-image:linear-gradient(top,#4d90fe,#4787ed)}#goog-gt-tt .translate-form .activity-form input.activity-submit:hover #goog-gt-tt .translate-form .activity-form input.activity-submit:focus,#goog-gt-tt .translate-form .activity-form input.activity-submit.focus #goog-gt-tt .translate-form .activity-form input.activity-submit:active{border-color:#3079ed;background-color:#357ae8;background-image:-webkit-gradient(linear,left top,left bottom,from(#4d90fe),to(#357ae8));background-image:-webkit-linear-gradient(top,#4d90fe,#357ae8);background-image:-moz-linear-gradient(top,#4d90fe,#357ae8);background-image:-ms-linear-gradient(top,#4d90fe,#357ae8);background-image:-o-linear-gradient(top,#4d90fe,#357ae8);background-image:linear-gradient(top,#4d90fe,#357ae8)}#goog-gt-tt .translate-form .activity-form input.activity-submit:hover{box-shadow:inset 0 0 0 1px #fff,0px 1px 1px rgba(0,0,0,0.1);-webkit-box-shadow:inset 0 0 0 1px #fff,0px 1px 1px rgba(0,0,0,0.1);-moz-box-shadow:inset 0 0 0 1px #fff,0px 1px 1px rgba(0,0,0,0.1)}#goog-gt-tt .translate-form .activity-form input:focus,#goog-gt-tt .translate-form .activity-form input.focus,#goog-gt-tt .translate-form .activity-form input:active,#goog-gt-tt .translate-form .activity-form input:hover,#goog-gt-tt .translate-form .activity-form input.activity-submit:focus,#goog-gt-tt .translate-form .activity-form input.activity-submit.focus,#goog-gt-tt .translate-form .activity-form input.activity-submit:active,#goog-gt-tt .translate-form .activity-form input.activity-submit:hover{border-color:#3079ed}#goog-gt-tt .gray{color:#999;font-family:arial,sans-serif}#goog-gt-tt .alt-helper-text{color:#999;font-size:11px;font-family:arial,sans-serif;margin:15px 0px 5px 0px}#goog-gt-tt .alt-error-text{color:#800;display:none;font-size:9pt}.goog-text-highlight{background-color:#c9d7f1;-webkit-box-shadow:2px 2px 4px #9999aa;-moz-box-shadow:2px 2px 4px #9999aa;box-shadow:2px 2px 4px #9999aa;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;position:relative}#goog-gt-tt .alt-menu.goog-menu{background:#ffffff;border:1px solid #dddddd;-webkit-box-shadow:0px 3px 3px #888;-moz-box-shadow:0px 2px 20px #888;box-shadow:0px 2px 4px #99a;min-width:0;outline:none;padding:0;position:absolute;z-index:2000}#goog-gt-tt .alt-menu .goog-menuitem{cursor:pointer;padding:2px 5px 5px;margin-right:0px;border-style:none}#goog-gt-tt .alt-menu div.goog-menuitem:hover{background:#ddd}#goog-gt-tt .alt-menu .goog-menuitem h1{font-size:100%;font-weight:bold;margin:4px 0px}#goog-gt-tt .alt-menu .goog-menuitem strong{color:#345aad}#goog-gt-tt .goog-submenu-arrow{text-align:right;position:absolute;right:0;left:auto}#goog-gt-tt .goog-menuitem-rtl .goog-submenu-arrow{text-align:left;position:absolute;left:0;right:auto}#goog-gt-tt .gt-hl-text,#goog-gt-tt .trans-target-highlight{background-color:#f1ea00;border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;-moz-box-shadow:rgba(0,0,0,.5) 3px 3px 4px;-webkit-box-shadow:rgba(0,0,0,.5) 3px 3px 4px;box-shadow:rgba(0,0,0,.5) 3px 3px 4px;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;color:#f1ea00;cursor:pointer;margin:-2px -2px -2px -3px;padding:2px 2px 2px 3px;position:relative}#goog-gt-tt .trans-target-highlight{color:#222}#goog-gt-tt .gt-hl-layer{color:white;position:absolute!important}#goog-gt-tt .trans-target,#goog-gt-tt .trans-target .trans-target-highlight{background-color:#c9d7f1;border-radius:4px 4px 0px 0px;-webkit-border-radius:4px 4px 0px 0px;-moz-border-radius:4px 4px 0px 0px;-moz-box-shadow:rgba(0,0,0,.5) 3px 3px 4px;-webkit-box-shadow:rgba(0,0,0,.5) 3px 3px 4px;box-shadow:rgba(0,0,0,.5) 3px 3px 4px;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;cursor:pointer;margin:-2px -2px -2px -3px;padding:2px 2px 3px 3px;position:relative}#goog-gt-tt span:focus{outline:none}#goog-gt-tt .trans-edit{background-color:transparent;border:1px solid #4d90fe;border-radius:0em;-webkit-border-radius:0em;-moz-border-radius:0em;margin:-2px;padding:1px}#goog-gt-tt .gt-trans-highlight-l{border-left:2px solid red;margin-left:-2px}#goog-gt-tt .gt-trans-highlight-r{border-right:2px solid red;margin-right:-2px}#goog-gt-tt #alt-input{padding:2px}#goog-gt-tt #alt-input-text{font-size:11px;padding:2px 2px 3px;margin:0;background-color:#fff;color:#333;border:1px solid #d9d9d9;border-top:1px solid #c0c0c0;display:inline-block;vertical-align:top;height:21px;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-webkit-border-radius:1px}#goog-gt-tt #alt-input-text:hover{border:1px solid #b9b9b9;border-top:1px solid #a0a0a0;-webkit-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);-moz-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1)}#goog-gt-tt #alt-input-text:focus{-webkit-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);-moz-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);outline:none;border:1px solid #4d90fe}#goog-gt-tt #alt-input-submit{font-size:11px;padding:2px 6px 3px;margin:0 0 0 2px;height:21px}.goog-te-spinner-pos, #goog-gt-tt {display: none;}</style></head>
+<body>
+  <header class="hero">
+    <img class="band-logo" src="assets/guns-n-roses.png" alt="Guns N' Roses">
+
+    <div class="top-music" aria-label="Música do nosso site">
+      <span class="music-note">♫</span>
+      <span class="music-label">Nossa trilha sonora · Sweet Child O' Mine</span>
+      <audio id="song" controls="" preload="metadata">
+        <source src="assets/sweet-child-o-mine-solo.mp3" type="audio/mpeg">
+        Seu navegador não consegue reproduzir este áudio.
+      </audio>
+    </div>
+    <div class="eyebrow">Uma história que é só nossa</div>
+    <h1>Você é minha<br><span>melhor parte.</span></h1>
+    <p class="intro">Entre tantas pessoas no mundo, a vida colocou você no meu caminho. E desde então, meus dias têm um motivo a mais para sorrir.</p>
+    <div class="scroll">Nossa história começa aqui <b>↓</b></div>
+  </header>
+
+  <main>
+    <section>
+      <div class="wrap">
+        <h2 class="section-title">Meu duo favorito ❤️</h2>
+        <p class="section-sub">Na partida e fora dela, é com você que eu quero estar.</p>
+        <div class="photo-frame"><img src="assets/nos-dois.jpeg" alt="Foto dos dois juntos"></div>
+        <div class="caption">Eu escolheria você em todas as partidas.</div>
+      </div>
+    </section>
+
+
+
+    <section id="nossas-memorias">
+      <div class="wrap">
+        <h2 class="section-title">Nossas memórias</h2>
+        <p class="section-sub">Fotos e vídeos de momentos que quero guardar para sempre. &lt;3 </p>
+
+        <h3 class="memory-heading">Nossos vídeos 🎬</h3>
+        <div class="videos-grid">
+          <div class="video-card">
+            <video controls="" playsinline="" preload="metadata">
+              <source src="assets/video1.mp4" type="video/mp4">
+              Seu navegador não consegue reproduzir este vídeo.
+            </video>
+            <p>As melhores risadas são com vc! ❤️</p>
+          </div>
+          <div class="video-card">
+            <video controls="" playsinline="" preload="metadata">
+              <source src="assets/video2.mp4" type="video/mp4">
+              Seu navegador não consegue reproduzir este vídeo.
+            </video>
+            <p>A risada mais linda desse mundo pqp❤️</p>
+          </div>
+          <div class="video-card">
+            <video controls="" playsinline="" preload="metadata">
+              <source src="assets/video3.mp4" type="video/mp4">
+              Seu navegador não consegue reproduzir este vídeo.
+            </video>
+            <p>eu amo as nossas resenhas rs ❤️</p>
+          </div>
+          <div class="video-card">
+            <video controls="" playsinline="" preload="metadata">
+              <source src="assets/video4.mp4" type="video/mp4">
+              Seu navegador não consegue reproduzir este vídeo.
+            </video>
+            <p>É so agachar❤️</p>
+          </div>
+        </div>
+
+        <h3 class="memory-heading photo-heading">Nossas fotos 📸</h3>
+        <div class="photos-grid">
+          <figure class="memory-photo">
+            <img src="assets/nos-dois.jpeg" alt="Nossa primeira foto da galeria">
+            <figcaption>Eu e tu, tu e eu sempre cocuda ❤️</figcaption>
+          </figure>
+          <figure class="memory-photo">
+            <img src="assets/foto2.jpeg" alt="Nossa segunda foto da galeria">
+            <figcaption>Os zoiões que eu sou doido! ❤️</figcaption>
+          </figure>
+        </div>
+
+        <p class="video-help">Coloque os quatro vídeos MP4 na pasta <b>assets</b> com os nomes <b>video1.mp4</b>, <b>video2.mp4</b>, <b>video3.mp4</b> e <b>video4.mp4</b>. Para a segunda foto, coloque sua imagem na mesma pasta com o nome <b>foto2.jpeg</b>. A primeira foto já está incluída.</p>
+      </div>
+    </section>
+
+
+
+    <section class="love-phrases" id="frases">
+      <div class="wrap">
+        <p class="phrase-kicker">Só para você lembrar...</p>
+        <h2 class="section-title">Mil motivos para te amar</h2>
+        <div class="phrase-list">
+          <div class="phrase-card"><span>♥</span><p>Eu te amo, meu bem.</p></div>
+          <div class="phrase-card"><span>✦</span><p>Te quero hoje e sempre.</p></div>
+          <div class="phrase-card"><span>♥</span><p>Minha dupla pra todo o sempre.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="counter-section">
+      <div class="wrap">
+        <h2 class="section-title">Desde que tudo começou...</h2>
+        <p class="section-sub">O tempo passa, mas eu continuo feliz por ter você comigo.</p>
+        <div class="counter" aria-live="polite">
+          <div class="unit"><span class="num" id="days">340</span><small>Dias</small></div>
+          <div class="unit"><span class="num" id="hours">01</span><small>Horas</small></div>
+          <div class="unit"><span class="num" id="minutes">06</span><small>Minutos</small></div>
+          <div class="unit"><span class="num" id="seconds">12</span><small>Segundos</small></div>
+        </div>
+        <p class="since">08 de dezembro de 2025 · nosso começo. Obrigado Real trem kakkaka</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2 class="section-title">Uma coisa que eu quero que você saiba</h2>
+        <p class="section-sub">Guarda isso com carinho.</p>
+        <div class="note">
+          <p>“Não preciso de um mundo perfeito. Só quero continuar construindo o meu ao seu lado, vivendo nossas histórias, dando risada das nossas besteiras e escolhendo você todos os dias. PORQUE EU TE AMO Isabeli.”</p>
+          <span class="heart">♥</span>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+  <footer>Feito com <span class="heart">♥</span> especialmente para você.</footer>
+
+  <script>
+    const start = new Date(2025, 11, 8, 0, 0, 0); // mês 11 = dezembro
+    const pad = n => String(n).padStart(2, '0');
+    function updateCounter() {
+      let diff = Math.max(0, Date.now() - start.getTime());
+      const days = Math.floor(diff / 86400000);
+      diff %= 86400000;
+      document.getElementById('days').textContent = days;
+      document.getElementById('hours').textContent = pad(Math.floor(diff / 3600000));
+      document.getElementById('minutes').textContent = pad(Math.floor((diff % 3600000) / 60000));
+      document.getElementById('seconds').textContent = pad(Math.floor((diff % 60000) / 1000));
+    }
+    updateCounter(); setInterval(updateCounter, 1000);
+
+  </script><div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4=" width="20" height="20" alt="Google Translate"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">Original text</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">Contribute a better translation</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div>
+
+
+<div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div></body></html>
